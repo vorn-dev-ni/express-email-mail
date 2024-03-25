@@ -36,8 +36,8 @@ app.use((err, req, res, next) => {
   const errors = err.message?.trim() || err;
   return res.status(400).json({
     error: errors,
-    name: err.name,
-    statusCode: err.statusCode,
+    name: err.name || 'Runtime Error',
+    statusCode: err.statusCode || 400,
   });
 });
 app.use("*", notFound);

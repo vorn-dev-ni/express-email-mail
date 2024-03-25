@@ -33,7 +33,7 @@ const postMessage = async (req, res, next) => {
   try {
     const result = await Message.create({ email });
     console.log(result);
-
+    await sendEmail({email})
     return res.status(200).json({
       data: email,
       message: "successful",
@@ -41,9 +41,7 @@ const postMessage = async (req, res, next) => {
     });
   } catch (error) {
     return next(error);
-  } finally {
-     await sendEmail({email})
-  }
+  } 
 };
 const deleteSingleMessage = async (req, res, next) => {
   try {
