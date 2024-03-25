@@ -24,7 +24,7 @@ const limiter = rateLimit({
   standardHeaders: "draft-7", // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
 });
-
+//sads
 // Apply the rate limiting middleware to all requests.
 app.use(limiter);
 app.use(allowCrossDomain)
